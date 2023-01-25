@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 238046040}
   - component: {fileID: 238046039}
+  - component: {fileID: 238046041}
   m_Layer: 0
   m_Name: House
   m_TagString: Untagged
@@ -218,6 +219,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &238046041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 238046038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f81c7c1100ff3f4438816c1a63a94fb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomBlocks:
+  - {fileID: 249730478}
+  - {fileID: 927582776}
+  - {fileID: 1260472609}
+  - {fileID: 693369537}
+  - {fileID: 1353882370}
+  - {fileID: 656773705}
+  - {fileID: 1030223333}
+  - {fileID: 802815658}
+  - {fileID: 786237082}
+  - {fileID: 1003948158}
+  - {fileID: 1494536475}
 --- !u!1 &249730475
 GameObject:
   m_ObjectHideFlags: 0
@@ -228,6 +253,7 @@ GameObject:
   m_Component:
   - component: {fileID: 249730476}
   - component: {fileID: 249730477}
+  - component: {fileID: 249730478}
   m_Layer: 0
   m_Name: Room_Attic
   m_TagString: Untagged
@@ -244,7 +270,7 @@ Transform:
   m_GameObject: {fileID: 249730475}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -13.8, y: 8.4992, z: 0}
-  m_LocalScale: {x: 9.1, y: 4.60006, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 238046040}
@@ -291,17 +317,31 @@ SpriteRenderer:
   m_SortingLayerID: 1767108367
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Sprite: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &249730478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249730475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe0ffa3007ac40945819f0ff01898b96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDark: 0
+  roomSet: {fileID: 11400000, guid: dcff4f1be0c422147b93f11effdaa26b, type: 2}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -541,6 +581,7 @@ GameObject:
   m_Component:
   - component: {fileID: 656773703}
   - component: {fileID: 656773704}
+  - component: {fileID: 656773705}
   m_Layer: 0
   m_Name: Room_3
   m_TagString: Untagged
@@ -557,7 +598,7 @@ Transform:
   m_GameObject: {fileID: 656773702}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.45, y: -2.2500005, z: 0}
-  m_LocalScale: {x: 9.1, y: 5.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 238046040}
@@ -604,17 +645,31 @@ SpriteRenderer:
   m_SortingLayerID: 1767108367
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Sprite: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &656773705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 656773702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe0ffa3007ac40945819f0ff01898b96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDark: 0
+  roomSet: {fileID: 11400000, guid: 370cf068d7d77a047b9fd86ce7e07c8f, type: 2}
 --- !u!1 &693369534
 GameObject:
   m_ObjectHideFlags: 0
@@ -625,6 +680,7 @@ GameObject:
   m_Component:
   - component: {fileID: 693369535}
   - component: {fileID: 693369536}
+  - component: {fileID: 693369537}
   m_Layer: 0
   m_Name: Room_1
   m_TagString: Untagged
@@ -641,7 +697,7 @@ Transform:
   m_GameObject: {fileID: 693369534}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -13.8, y: -2.2500005, z: 0}
-  m_LocalScale: {x: 9.1, y: 5.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 238046040}
@@ -688,17 +744,31 @@ SpriteRenderer:
   m_SortingLayerID: 1767108367
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Sprite: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &693369537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 693369534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe0ffa3007ac40945819f0ff01898b96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDark: 0
+  roomSet: {fileID: 11400000, guid: 44f4db4b8dcca244b9a9c5705d0dc025, type: 2}
 --- !u!1 &786237079
 GameObject:
   m_ObjectHideFlags: 0
@@ -709,6 +779,7 @@ GameObject:
   m_Component:
   - component: {fileID: 786237080}
   - component: {fileID: 786237081}
+  - component: {fileID: 786237082}
   m_Layer: 0
   m_Name: Room_6
   m_TagString: Untagged
@@ -725,7 +796,7 @@ Transform:
   m_GameObject: {fileID: 786237079}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.7, y: -7.85, z: 0}
-  m_LocalScale: {x: 9.1, y: 5.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 238046040}
@@ -772,17 +843,31 @@ SpriteRenderer:
   m_SortingLayerID: 1767108367
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Sprite: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &786237082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 786237079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe0ffa3007ac40945819f0ff01898b96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDark: 0
+  roomSet: {fileID: 11400000, guid: b75eabe66c566664ca8e281fb33996a1, type: 2}
 --- !u!1 &802815655
 GameObject:
   m_ObjectHideFlags: 0
@@ -793,6 +878,7 @@ GameObject:
   m_Component:
   - component: {fileID: 802815656}
   - component: {fileID: 802815657}
+  - component: {fileID: 802815658}
   m_Layer: 0
   m_Name: Room_5
   m_TagString: Untagged
@@ -809,7 +895,7 @@ Transform:
   m_GameObject: {fileID: 802815655}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -13.8, y: -7.85, z: 0}
-  m_LocalScale: {x: 9.1, y: 5.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 238046040}
@@ -856,17 +942,31 @@ SpriteRenderer:
   m_SortingLayerID: 1767108367
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Sprite: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &802815658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 802815655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe0ffa3007ac40945819f0ff01898b96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDark: 0
+  roomSet: {fileID: 11400000, guid: f5b9f644935a44e478ca27aa6f4d3e6e, type: 2}
 --- !u!1 &927582773
 GameObject:
   m_ObjectHideFlags: 0
@@ -877,6 +977,7 @@ GameObject:
   m_Component:
   - component: {fileID: 927582774}
   - component: {fileID: 927582775}
+  - component: {fileID: 927582776}
   m_Layer: 0
   m_Name: Room_Ladder
   m_TagString: Untagged
@@ -893,7 +994,7 @@ Transform:
   m_GameObject: {fileID: 927582773}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -13.8, y: 3.35, z: 0}
-  m_LocalScale: {x: 9.1, y: 5.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 238046040}
@@ -940,17 +1041,31 @@ SpriteRenderer:
   m_SortingLayerID: 1767108367
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Sprite: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &927582776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 927582773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe0ffa3007ac40945819f0ff01898b96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDark: 0
+  roomSet: {fileID: 11400000, guid: ef77e8b35d101474fafa7b748eb03be7, type: 2}
 --- !u!1 &1003948155
 GameObject:
   m_ObjectHideFlags: 0
@@ -961,6 +1076,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1003948156}
   - component: {fileID: 1003948157}
+  - component: {fileID: 1003948158}
   m_Layer: 0
   m_Name: Room_7
   m_TagString: Untagged
@@ -977,7 +1093,7 @@ Transform:
   m_GameObject: {fileID: 1003948155}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.45, y: -7.85, z: 0}
-  m_LocalScale: {x: 9.1, y: 5.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 238046040}
@@ -1024,17 +1140,31 @@ SpriteRenderer:
   m_SortingLayerID: 1767108367
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Sprite: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1003948158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1003948155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe0ffa3007ac40945819f0ff01898b96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDark: 0
+  roomSet: {fileID: 11400000, guid: 64c67b8e31b462e488a8d5b7082c65ee, type: 2}
 --- !u!1 &1030223330
 GameObject:
   m_ObjectHideFlags: 0
@@ -1045,6 +1175,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1030223331}
   - component: {fileID: 1030223332}
+  - component: {fileID: 1030223333}
   m_Layer: 0
   m_Name: Room_4
   m_TagString: Untagged
@@ -1061,7 +1192,7 @@ Transform:
   m_GameObject: {fileID: 1030223330}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 13.6, y: -2.2500005, z: 0}
-  m_LocalScale: {x: 9.1, y: 5.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 238046040}
@@ -1108,17 +1239,31 @@ SpriteRenderer:
   m_SortingLayerID: 1767108367
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Sprite: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1030223333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030223330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe0ffa3007ac40945819f0ff01898b96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDark: 0
+  roomSet: {fileID: 11400000, guid: bddf14b804207d84eab33b32bd88875a, type: 2}
 --- !u!1 &1260472606
 GameObject:
   m_ObjectHideFlags: 0
@@ -1129,6 +1274,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1260472607}
   - component: {fileID: 1260472608}
+  - component: {fileID: 1260472609}
   m_Layer: 0
   m_Name: Room_Studio
   m_TagString: Untagged
@@ -1145,7 +1291,7 @@ Transform:
   m_GameObject: {fileID: 1260472606}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.45, y: 5.676, z: 0}
-  m_LocalScale: {x: 27.35, y: 10.2512, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 238046040}
@@ -1192,17 +1338,31 @@ SpriteRenderer:
   m_SortingLayerID: 1767108367
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Sprite: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1260472609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260472606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe0ffa3007ac40945819f0ff01898b96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDark: 0
+  roomSet: {fileID: 11400000, guid: 738af341ac0f3ba4abc9cf8384aab285, type: 2}
 --- !u!1 &1353882367
 GameObject:
   m_ObjectHideFlags: 0
@@ -1213,6 +1373,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1353882368}
   - component: {fileID: 1353882369}
+  - component: {fileID: 1353882370}
   m_Layer: 0
   m_Name: Room_2
   m_TagString: Untagged
@@ -1229,7 +1390,7 @@ Transform:
   m_GameObject: {fileID: 1353882367}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.7, y: -2.25, z: 0}
-  m_LocalScale: {x: 9.1, y: 5.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 238046040}
@@ -1276,17 +1437,31 @@ SpriteRenderer:
   m_SortingLayerID: 1767108367
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Sprite: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1353882370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1353882367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe0ffa3007ac40945819f0ff01898b96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDark: 0
+  roomSet: {fileID: 11400000, guid: 311f855fadbf96347bc848c164af9888, type: 2}
 --- !u!1 &1494536472
 GameObject:
   m_ObjectHideFlags: 0
@@ -1297,6 +1472,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1494536473}
   - component: {fileID: 1494536474}
+  - component: {fileID: 1494536475}
   m_Layer: 0
   m_Name: Room_8
   m_TagString: Untagged
@@ -1313,7 +1489,7 @@ Transform:
   m_GameObject: {fileID: 1494536472}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 13.6, y: -7.85, z: 0}
-  m_LocalScale: {x: 9.1, y: 5.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 238046040}
@@ -1360,14 +1536,28 @@ SpriteRenderer:
   m_SortingLayerID: 1767108367
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Sprite: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1494536475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1494536472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe0ffa3007ac40945819f0ff01898b96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDark: 0
+  roomSet: {fileID: 11400000, guid: 5281ca3e47e3e8e4aa3c02c0d081de08, type: 2}
