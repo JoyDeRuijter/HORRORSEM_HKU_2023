@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Staircase
   m_EditorClassIdentifier: 
   setName: Staircase
+  hasStairsOrLadder: 1
   roomSprites:
   - {fileID: 21300000, guid: 16e87c52ba7d4a448b0fc402e0011569, type: 3}
   - {fileID: 21300000, guid: 9bcd154593d676d4abdc513d22f0e658, type: 3}

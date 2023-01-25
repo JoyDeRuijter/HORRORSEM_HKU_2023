@@ -6,6 +6,7 @@ using UnityEngine;
 public class RoomSet : ScriptableObject
 {
     public string setName;
+    public bool hasStairsOrLadder;
     public Sprite[] roomSprites = new Sprite[2];
     public Light[] lights;
 }
