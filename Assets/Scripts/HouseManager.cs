@@ -5,16 +5,23 @@ using UnityEngine;
 public class HouseManager : MonoBehaviour
 {
     [SerializeField] private RoomBlock[] roomBlocks = new RoomBlock[11];
+    [SerializeField] private Door[] doors = new Door[7];
+
+    private Door lastDisabledDoor;
 
     private void Update()
     {
-        //Temporary test functionality
+        // Temporary test functionality
         if(Input.GetKeyDown(KeyCode.F))
             TestLightsOnOff();
 
-        //Temporary test functionality
+        // Temporary test functionality
         if (Input.GetKeyDown(KeyCode.G))
             TestSwitchRooms();
+
+        // Temporary test functionality
+        if (Input.GetKeyDown(KeyCode.R))
+            TestDisableEnableDoors();
     }
 
     // Test method that turn all the lights on or off
@@ -41,6 +48,34 @@ public class HouseManager : MonoBehaviour
 
         roomBlocks[i].roomSet = secondSet;
         roomBlocks[j].roomSet = firstSet;
+    }
+
+    // Test method that disables a random door and re-ables the last disabled door
+    private void TestDisableEnableDoors()
+    {
+        int randomIndex = Random.Range(0, doors.Length);
+
+        if (lastDisabledDoor != null)
+            lastDisabledDoor.isActive = true;
+
+        if (doors[randomIndex].isActive)
+        {
+            doors[randomIndex].isActive = false;
+            lastDisabledDoor = doors[randomIndex];
+        }
+        else
+        {
+            if (randomIndex + 1 < doors.Length)
+            {
+                doors[randomIndex + 1].isActive = false;
+                lastDisabledDoor = doors[randomIndex + 1];
+            }
+            else
+            {
+                doors[0].isActive = false;
+                lastDisabledDoor = doors[0];
+            }
+        }
     }
 
     // Returns the roomblock the player is currently in
