@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: Ladder
   m_EditorClassIdentifier: 
   setName: Ladder
-  hasStairsOrLadder: 1
   roomSprites:
-  - {fileID: 21300000, guid: 3dbb194bae398634aaad60a02975b89f, type: 3}
-  - {fileID: 21300000, guid: 6e53660cf2718f74580f37dddb3acf4d, type: 3}
+  - {fileID: 21300000, guid: 73e69af51d75d3e4cbc0efd3190b58aa, type: 3}
+  - {fileID: 21300000, guid: e23517f414428d04ba7aaeb0fc17f608, type: 3}
   lights: []
+  hasStairsOrLadder: 1
+  lowPositionPlayerAsChild: {x: -0.36, y: -2.658}
+  highPositionPlayerAsChild: {x: -0.36, y: 2.99}

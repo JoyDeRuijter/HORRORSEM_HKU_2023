@@ -6,7 +6,12 @@ using UnityEngine;
 public class RoomSet : ScriptableObject
 {
     public string setName;
-    public bool hasStairsOrLadder;
     public Sprite[] roomSprites = new Sprite[2];
     public Light[] lights;
+    public bool hasStairsOrLadder;
+
+    [Space(2)]
+    [Header("If room has stairs or a ladder:")]
+    public Vector2 lowPositionPlayerAsChild;
+    public Vector2 highPositionPlayerAsChild;
 }

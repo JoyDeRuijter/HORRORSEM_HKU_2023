@@ -23,10 +23,11 @@ public class HouseManager : MonoBehaviour
 
     private void TestSwitchRooms()
     { 
-        int i = Random.Range(3, roomBlocks.Length - 1);
-        int j = Random.Range(3, roomBlocks.Length - 1);
+        int i = Random.Range(3, roomBlocks.Length);
+        int j = Random.Range(3, roomBlocks.Length);
+        int compareValue = j + 1;
 
-        if (i == j && j++ >= roomBlocks.Length)
+        if (i == j && compareValue >= roomBlocks.Length)
             j = 3;
         else if (i == j)
             j++;
@@ -36,5 +37,18 @@ public class HouseManager : MonoBehaviour
 
         roomBlocks[i].roomSet = secondSet;
         roomBlocks[j].roomSet = firstSet;
+    }
+
+    public RoomBlock currentPlayerPosition()
+    {
+        Renderer playerRenderer = GameManager.Instance.player.gameObject.GetComponent<Renderer>();
+        
+        for (int i = 0; i < roomBlocks.Length; i++)
+        { 
+            if (playerRenderer.bounds.Intersects(roomBlocks[i].gameObject.GetComponent<Renderer>().bounds)) 
+                return roomBlocks[i];
+        }
+
+        return null;
     }
 }

@@ -10,6 +10,7 @@ public class RoomBlock : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
     private Sprite currentSprite;
+    public bool playerIsHere;
 
     private void Awake()
     {
