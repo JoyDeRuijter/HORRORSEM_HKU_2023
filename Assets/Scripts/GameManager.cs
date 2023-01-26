@@ -5,9 +5,9 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
+    
     public Player player;
     public HouseManager houseManager;
-    public string playerRoomPosition;
 
     private RoomBlock playerRoomBlock;
 
@@ -21,22 +21,42 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (houseManager.currentPlayerPosition() == null)
-        {
-            playerRoomPosition = "Player is not in a room";
+        CheckPlayerPosition();
+        HandleStairsAndLadderInput();    
+    }
+
+    // Saves the current roomblock the player is in
+    private void CheckPlayerPosition()
+    {
+        RoomBlock previousRoomBlock = playerRoomBlock;
+
+        if (houseManager.currentPlayerPosition() == null && previousRoomBlock != null)
+        { 
             playerRoomBlock = null;
+            previousRoomBlock.playerIsHere = false;
         }
-        else
+        else if (houseManager.currentPlayerPosition() != null && houseManager.currentPlayerPosition() != previousRoomBlock)
         { 
-            playerRoomPosition = houseManager.currentPlayerPosition().roomSet.setName;
             playerRoomBlock = houseManager.currentPlayerPosition();
+            playerRoomBlock.playerIsHere = true;
+            if(previousRoomBlock != null)
+                previousRoomBlock.playerIsHere = false;
         }
+    }
 
-        if (Input.GetKeyDown(KeyCode.Space) && playerRoomBlock.roomSet.hasStairsOrLadder)
-        { 
+    // Handles the input of the input for using the stairs and ladder
+    private void HandleStairsAndLadderInput()
+    {
+        if (Input.GetKeyDown(KeyCode.W) && playerRoomBlock.roomSet.hasStairsOrLadder && !player.isUsingStairsOrLadder)
             StartCoroutine(player.UseStairsOrLadder(playerRoomBlock.gameObject, true, playerRoomBlock.roomSet.lowPositionPlayerAsChild, playerRoomBlock.roomSet.highPositionPlayerAsChild));
-            Debug.Log("Pressed Space and is in room with stairs or ladder");
-        }
 
+        else if (Input.GetKeyDown(KeyCode.S)
+                 && houseManager.RoomBelowRoom(playerRoomBlock, player) != null
+                 && houseManager.RoomBelowRoom(playerRoomBlock, player).roomSet.hasStairsOrLadder
+                 && !player.isUsingStairsOrLadder)
+        {
+            RoomBlock rb = houseManager.RoomBelowRoom(playerRoomBlock, player);
+            StartCoroutine(player.UseStairsOrLadder(rb.gameObject, false, rb.roomSet.lowPositionPlayerAsChild, rb.roomSet.highPositionPlayerAsChild));
+        }
     }
 }

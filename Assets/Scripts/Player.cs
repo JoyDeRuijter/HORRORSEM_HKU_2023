@@ -6,11 +6,12 @@ using DG.Tweening;
 
 public class Player : MonoBehaviour
 {
+    [HideInInspector] public bool isUsingStairsOrLadder;
+
     [SerializeField] private float speed;
 
-    private Rigidbody2D rb;
     private BoxCollider2D bc;
-    private bool isUsingStairsOrLadder;
+    private Rigidbody2D rb;
 
     private void Awake()
     {
@@ -20,16 +21,14 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if (!isUsingStairsOrLadder)
-        { 
-            float moveHorizontal = Input.GetAxis("Horizontal");
-            rb.velocity = new Vector2(moveHorizontal * speed, 0);
-        }
+        HandleHorizontalMovement();
     }
 
+    // Coroutine that moves the player up or down a ladder or set of stairs
     public IEnumerator UseStairsOrLadder(GameObject _roomObject, bool _isGoingUp, Vector2 _lowPosition, Vector2 _highPosition)
     {
         isUsingStairsOrLadder = true;
+        
         Vector3 lowPos = new Vector3(_lowPosition.x, _lowPosition.y, 0f);
         Vector3 highPos = new Vector3(_highPosition.x, _highPosition.y, 0f);
         
@@ -46,9 +45,9 @@ public class Player : MonoBehaviour
         }
         else
         {
-            transform.DOMove(highPos, 1f);
+            transform.DOLocalMove(highPos, 1f);
             yield return new WaitForSeconds(1f);
-            transform.DOMove(lowPos, 2.5f);
+            transform.DOLocalMove(lowPos, 2.5f);
             yield return new WaitForSeconds(2.5f);
         }
 
@@ -57,5 +56,15 @@ public class Player : MonoBehaviour
         rb.isKinematic = false;
 
         isUsingStairsOrLadder = false;
+    }
+
+    // Handles the horizontal input and uses it to move the player horizontally
+    private void HandleHorizontalMovement()
+    {
+        if (!isUsingStairsOrLadder)
+        {
+            float moveHorizontal = Input.GetAxis("Horizontal");
+            rb.velocity = new Vector2(moveHorizontal * speed, 0);
+        }
     }
 }

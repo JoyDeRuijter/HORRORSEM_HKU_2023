@@ -8,19 +8,23 @@ public class HouseManager : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.L))
+        //Temporary test functionality
+        if(Input.GetKeyDown(KeyCode.F))
             TestLightsOnOff();
 
-        if (Input.GetKeyDown(KeyCode.S))
+        //Temporary test functionality
+        if (Input.GetKeyDown(KeyCode.G))
             TestSwitchRooms();
     }
 
+    // Test method that turn all the lights on or off
     private void TestLightsOnOff()
     { 
         foreach(RoomBlock rb in roomBlocks)
             rb.isDark = !rb.isDark;
     }
 
+    // Test method that switches 2 random rooms
     private void TestSwitchRooms()
     { 
         int i = Random.Range(3, roomBlocks.Length);
@@ -39,6 +43,7 @@ public class HouseManager : MonoBehaviour
         roomBlocks[j].roomSet = firstSet;
     }
 
+    // Returns the roomblock the player is currently in
     public RoomBlock currentPlayerPosition()
     {
         Renderer playerRenderer = GameManager.Instance.player.gameObject.GetComponent<Renderer>();
@@ -50,5 +55,41 @@ public class HouseManager : MonoBehaviour
         }
 
         return null;
+    }
+
+    // Returns the roomblock below the given roomblock
+    public RoomBlock RoomBelowRoom(RoomBlock _currentRoomBlock, Player _player)
+    {
+        int currentIndex = 100;
+        for (int i = 0; i < roomBlocks.Length; i++)
+        {
+            if (roomBlocks[i] == _currentRoomBlock)
+                currentIndex = i;
+        }
+
+        switch (currentIndex)
+        {
+            case 0: return roomBlocks[1];
+            case 1: return roomBlocks[3];
+            case 2: return roomBlocks[RoomIndexBelowStudio(_player)];
+            case 3: return roomBlocks[7];
+            case 4: return roomBlocks[8];
+            case 5: return roomBlocks[9];
+            case 6: return roomBlocks[10];
+            default : return null;     
+        }
+    }
+
+    // Returns the index of the room below the studio where the player is above
+    private int RoomIndexBelowStudio(Player _player)
+    {
+        Vector2 pos = _player.gameObject.transform.position;
+
+        if (pos.x >= 3.2f)
+            return 6;
+        else if (pos.x >= 0f && pos.x < 3.2f)
+            return 5;
+        else
+            return 4;
     }
 }

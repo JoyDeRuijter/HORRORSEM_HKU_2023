@@ -5,12 +5,12 @@ using UnityEngine;
 public class RoomBlock : MonoBehaviour
 {
     [HideInInspector] public bool isDark;
+    [HideInInspector] public bool playerIsHere;
 
     public RoomSet roomSet;
 
     private SpriteRenderer spriteRenderer;
     private Sprite currentSprite;
-    public bool playerIsHere;
 
     private void Awake()
     {
