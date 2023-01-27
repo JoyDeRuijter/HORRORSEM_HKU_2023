@@ -6,6 +6,5 @@ using UnityEngine;
 public class SpeakerProfile : ScriptableObject
 {
     public new string name;
-    public string description;
     public Sprite avatar;
 }
