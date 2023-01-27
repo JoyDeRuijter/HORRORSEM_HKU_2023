@@ -18,7 +18,7 @@ public class DialogueUI : MonoBehaviour
     {
         typeWriterEffect = GetComponent<TypeWriterEffect>();
         profileHandler = GetComponent<ProfileHandler>();
-        CloseDialogueBox();
+        //CloseDialogueBox();
     }
 
     public void ShowDialogue(DialogueObject dialogueObject)
