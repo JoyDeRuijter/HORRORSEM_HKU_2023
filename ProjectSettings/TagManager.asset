@@ -44,6 +44,9 @@ TagManager:
   - name: House
     uniqueID: 1767108367
     locked: 0
+  - name: HouseFrame
+    uniqueID: 2918238851
+    locked: 0
   - name: UI
     uniqueID: 3251017791
     locked: 0

@@ -7,10 +7,16 @@ public class HouseManager : MonoBehaviour
 
     private Door lastDisabledDoor;
 
+    private void Awake()
+    {
+        //TurnOnAllLights();
+        TurnOffAllLights();
+    }
+
     private void Update()
     {
         // Temporary test functionality
-        if(Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.F))
             TestLightsOnOff();
 
         // Temporary test functionality
@@ -20,18 +26,23 @@ public class HouseManager : MonoBehaviour
         // Temporary test functionality
         if (Input.GetKeyDown(KeyCode.R))
             TestDisableEnableDoors();
+
+        // Temporary test functionality
+        if (Input.GetKeyDown(KeyCode.H))
+            FlickerRandomRoomLight();
+
     }
 
     // Test method that turn all the lights on or off
     private void TestLightsOnOff()
-    { 
-        foreach(RoomBlock rb in roomBlocks)
+    {
+        foreach (RoomBlock rb in roomBlocks)
             rb.isDark = !rb.isDark;
     }
 
     // Test method that switches 2 random rooms
     private void TestSwitchRooms()
-    { 
+    {
         int i = Random.Range(3, roomBlocks.Length);
         int j = Random.Range(3, roomBlocks.Length);
         int compareValue = j + 1;
@@ -75,6 +86,26 @@ public class HouseManager : MonoBehaviour
             }
         }
     }
+
+    // Test method that flickers a light
+    private void FlickerRandomRoomLight()
+    {
+        int i = Random.Range(0, roomBlocks.Length);
+        StartCoroutine(roomBlocks[i].FlickerLight());
+    }
+
+    public void TurnOnAllLights()
+    { 
+        foreach(RoomBlock rb in roomBlocks)
+            rb.TurnLightOn();
+    }
+
+    public void TurnOffAllLights()
+    { 
+        foreach(RoomBlock rb in roomBlocks)
+            rb.TurnLightOff();
+    }
+
 
     // Returns the roomblock the player is currently in
     public RoomBlock currentPlayerPosition()

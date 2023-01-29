@@ -13,16 +13,12 @@ public class DialogueManager : MonoBehaviour
     {
     }
 
-    private void ShowDialogueObject(DialogueObject _dialogueObject)
-    {
-        dialogueUI.ShowDialogue(_dialogueObject);
-    }
-
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
             pressedSpace = true;
 
+        // Start the first dialoguesequence as test
         if (Input.GetKeyDown(KeyCode.P))
             StartCoroutine(PlayDialogueSequence(dialogueSequences[0]));
     }
