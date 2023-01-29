@@ -7,4 +7,5 @@ public class DialogueObject : ScriptableObject
 {
     public SpeakerProfile speaker;
     [TextArea] public string[] dialogue;
+    [HideInInspector] public bool isDone; 
 }

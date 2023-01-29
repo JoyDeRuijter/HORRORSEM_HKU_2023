@@ -1905,6 +1905,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1288892599}
   houseManager: {fileID: 238046041}
+  dialogueManager: {fileID: 0}
 --- !u!4 &1082434993
 Transform:
   m_ObjectHideFlags: 0
@@ -1933,6 +1934,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueUI: {fileID: 1471081243}
+  dialogueSequences:
+  - {fileID: 11400000, guid: e596112780132184497fd9e2ea112bf4, type: 2}
 --- !u!1 &1177995263
 GameObject:
   m_ObjectHideFlags: 0
@@ -2693,6 +2696,7 @@ GameObject:
   - component: {fileID: 1471081240}
   - component: {fileID: 1471081243}
   - component: {fileID: 1471081244}
+  - component: {fileID: 1471081245}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2814,6 +2818,20 @@ MonoBehaviour:
   profileBox: {fileID: 403128746156089289}
   name: {fileID: 403128744964123313}
   icon: {fileID: 403128744818195797}
+--- !u!114 &1471081245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1471081238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebe85268d8b872143a5aaf341108bbda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isRunning: 0
+  writingSpeed: 10
 --- !u!1 &1494536472
 GameObject:
   m_ObjectHideFlags: 0
@@ -4119,7 +4137,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 114.79, y: 0}
+  m_AnchoredPosition: {x: 114.79001, y: 0}
   m_SizeDelta: {x: -329.57, y: -60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &403128746150667911

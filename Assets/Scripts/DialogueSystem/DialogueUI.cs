@@ -7,7 +7,7 @@ public class DialogueUI : MonoBehaviour
     [HideInInspector] public bool isOpen;
 
     [SerializeField] private TMP_Text textLabel;
-    [SerializeField] private DialogueObject currentDialogue;
+    public DialogueObject currentDialogue;
     [SerializeField] private GameObject dialogueBox;
     [SerializeField] private DialogueManager dialogueManager;
 
@@ -18,38 +18,44 @@ public class DialogueUI : MonoBehaviour
     {
         typeWriterEffect = GetComponent<TypeWriterEffect>();
         profileHandler = GetComponent<ProfileHandler>();
-        //CloseDialogueBox();
     }
 
-    public void ShowDialogue(DialogueObject dialogueObject)
+    public void ShowDialogue(DialogueObject _dialogueObject)
     {
+        currentDialogue = _dialogueObject;
         isOpen = true;
         dialogueBox.SetActive(true);
-        profileHandler.UpdateProfile(dialogueObject);
+        profileHandler.UpdateProfile(_dialogueObject);
         profileHandler.ShowProfile();
-        StartCoroutine(StepThroughDialogue(dialogueObject));
+        StartCoroutine(StepThroughDialogue(_dialogueObject));
     }
 
-    private IEnumerator StepThroughDialogue(DialogueObject dialogueObject)
+    private IEnumerator StepThroughDialogue(DialogueObject _dialogueObject)
     {
-        for (int i = 0; i < dialogueObject.dialogue.Length; i++)
+        _dialogueObject.isDone = false;
+        for (int i = 0; i < _dialogueObject.dialogue.Length; i++)
         {
-            string dialogue = dialogueObject.dialogue[i];
+            string dialogue = _dialogueObject.dialogue[i];
 
             yield return RunTypingEffect(dialogue);
 
             textLabel.text = dialogue;
 
-            if (i == dialogueObject.dialogue.Length - 1) break;
+            if (i == _dialogueObject.dialogue.Length - 1)
+                break;
 
             yield return null;
             yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
         }
+
+        yield return new WaitForSeconds(1f);
+        dialogueManager.pressedSpace = false;
+        _dialogueObject.isDone = true;
     }
 
-    private IEnumerator RunTypingEffect(string dialogue)
+    private IEnumerator RunTypingEffect(string _dialogue)
     {
-        typeWriterEffect.Run(dialogue, textLabel);
+        typeWriterEffect.Run(_dialogue, textLabel);
 
         while (typeWriterEffect.isRunning)
         {
@@ -66,5 +72,6 @@ public class DialogueUI : MonoBehaviour
         dialogueBox.SetActive(false);
         textLabel.text = string.Empty;
         profileHandler.HideProfile();
+        currentDialogue = null;
     }
 }

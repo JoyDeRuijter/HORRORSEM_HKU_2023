@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
     
     public Player player;
     public HouseManager houseManager;
+    public DialogueManager dialogueManager;
 
     private RoomBlock playerRoomBlock;
 
@@ -15,6 +16,8 @@ public class GameManager : MonoBehaviour
             Destroy(this);
         else
             Instance = this;
+
+        dialogueManager = GetComponent<DialogueManager>();
     }
 
     private void Update()
