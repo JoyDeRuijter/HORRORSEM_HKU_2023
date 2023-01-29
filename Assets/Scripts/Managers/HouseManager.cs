@@ -20,10 +20,6 @@ public class HouseManager : MonoBehaviour
             TestLightsOnOff();
 
         // Temporary test functionality
-        if (Input.GetKeyDown(KeyCode.G))
-            TestSwitchRooms();
-
-        // Temporary test functionality
         if (Input.GetKeyDown(KeyCode.R))
             TestDisableEnableDoors();
 
@@ -40,23 +36,25 @@ public class HouseManager : MonoBehaviour
             rb.isDark = !rb.isDark;
     }
 
-    // Test method that switches 2 random rooms
-    private void TestSwitchRooms()
+    public void SwitchRooms(int _roomIndex1, int _roomIndex2)
     {
-        int i = Random.Range(3, roomBlocks.Length);
-        int j = Random.Range(3, roomBlocks.Length);
-        int compareValue = j + 1;
+        RoomSet firstSet = roomBlocks[_roomIndex1].roomSet;
+        RoomSet secondSet = roomBlocks[_roomIndex2].roomSet;
 
-        if (i == j && compareValue >= roomBlocks.Length)
-            j = 3;
-        else if (i == j)
-            j++;
+        roomBlocks[_roomIndex1].roomSet = secondSet;
+        roomBlocks[_roomIndex2].roomSet = firstSet;
+    }
 
-        RoomSet firstSet = roomBlocks[i].roomSet;
-        RoomSet secondSet = roomBlocks[j].roomSet;
+    public void ActivateDoor(int _doorIndex)
+    { 
+        if (!doors[_doorIndex].isActive)
+            doors[_doorIndex].isActive = true;
+    }
 
-        roomBlocks[i].roomSet = secondSet;
-        roomBlocks[j].roomSet = firstSet;
+    public void DeactivateDoor(int _doorIndex)
+    { 
+        if (doors[_doorIndex].isActive)
+            doors[_doorIndex].isActive = false;
     }
 
     // Test method that disables a random door and re-ables the last disabled door

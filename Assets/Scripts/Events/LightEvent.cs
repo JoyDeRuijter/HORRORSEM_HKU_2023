@@ -14,9 +14,7 @@ public class LightEvent : Event
     {
         base.Run();
         Debug.Log("Running lightEvent " + ID + " with eventType: " + eventType.ToString());
-        //dialogueManager.RunDialogueSequence(dialogueManager.dialogueSequences[ID], this);
 
-        //TODO SwitchCase for all lightEventTypes, running methods from housemanager
         switch (eventType) 
         {
             case LightEventType.ON:
