@@ -16,7 +16,31 @@ public class LightEvent : Event
         Debug.Log("Running lightEvent " + ID + " with eventType: " + eventType.ToString());
         //dialogueManager.RunDialogueSequence(dialogueManager.dialogueSequences[ID], this);
 
-        //TODO SwitchCase for all lightEventTypes, running methods from housemanager;
+        //TODO SwitchCase for all lightEventTypes, running methods from housemanager
+        switch (eventType) 
+        {
+            case LightEventType.ON:
+                houseManager.TurnOnLight(ID);
+                break;
+            case LightEventType.OFF:
+                houseManager.TurnOffLight(ID);
+                break;
+            case LightEventType.SLOWON:
+                houseManager.TurnOnLightSlow(ID);
+                break;
+            case LightEventType.FLICKER:
+                houseManager.FlickerRoomLight(ID);
+                break;
+            case LightEventType.ALLON:
+                houseManager.TurnOnAllLights();
+                break;
+            case LightEventType.ALLOFF:
+                houseManager.TurnOffAllLights();
+                break;
+            default:
+                Debug.Log("ERROR: NO LIGHTEVENTTYPE FOUND");
+                break;
+        }
     }
 }
 
