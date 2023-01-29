@@ -28,8 +28,8 @@ public class HouseManager : MonoBehaviour
             TestDisableEnableDoors();
 
         // Temporary test functionality
-        if (Input.GetKeyDown(KeyCode.H))
-            FlickerRandomRoomLight();
+        //if (Input.GetKeyDown(KeyCode.H))
+        //    FlickerRandomRoomLight();
 
     }
 
@@ -87,11 +87,9 @@ public class HouseManager : MonoBehaviour
         }
     }
 
-    // Test method that flickers a light
-    private void FlickerRandomRoomLight()
+    public void FlickerRoomLight(int _index)
     {
-        int i = Random.Range(0, roomBlocks.Length);
-        StartCoroutine(roomBlocks[i].FlickerLight());
+        StartCoroutine(roomBlocks[_index].FlickerLight());
     }
 
     public void TurnOnAllLights()
@@ -104,6 +102,21 @@ public class HouseManager : MonoBehaviour
     { 
         foreach(RoomBlock rb in roomBlocks)
             rb.TurnLightOff();
+    }
+
+    public void TurnOnLight(int _index)
+    {
+        roomBlocks[_index].TurnLightOn();
+    }
+
+    public void TurnOnLightSlow(int _index)
+    {
+        roomBlocks[_index].TurnLightOnSlow();
+    }
+
+    public void TurnOffLight(int _index)
+    {
+        roomBlocks[_index].TurnLightOff();
     }
 
 

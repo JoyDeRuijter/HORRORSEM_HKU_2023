@@ -3505,7 +3505,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1288892599}
   houseManager: {fileID: 238046041}
-  dialogueManager: {fileID: 0}
+  dialogueManager: {fileID: 1082434994}
 --- !u!4 &1082434993
 Transform:
   m_ObjectHideFlags: 0
@@ -3533,10 +3533,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12f4bc88c5dc0df489ec76dece0dd8e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueUI: {fileID: 1471081243}
   dialogueSequences:
   - {fileID: 11400000, guid: e596112780132184497fd9e2ea112bf4, type: 2}
   pressedSpace: 0
+  dialogueUI: {fileID: 1471081243}
 --- !u!1 &1177995263
 GameObject:
   m_ObjectHideFlags: 0
@@ -4333,6 +4333,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isUsingStairsOrLadder: 0
+  dialogueIsPlaying: 0
   speed: 1.5
 --- !u!212 &1288892600
 SpriteRenderer:

@@ -20,8 +20,6 @@ public class Event
     { 
         State = EventState.DONE;
     }
-
-    public IEnumerator Wait(float _seconds) { yield return new WaitForSeconds(_seconds); }
 }
 
 public enum EventState { WAITING, RUNNING, DONE}
