@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public DialogueManager dialogueManager;
 
     private RoomBlock playerRoomBlock;
+    DialogueEvent testEvent;
 
     private void Awake()
     {
@@ -18,6 +19,13 @@ public class GameManager : MonoBehaviour
             Instance = this;
 
         dialogueManager = GetComponent<DialogueManager>();
+
+        testEvent = new DialogueEvent(0);
+    }
+
+    private void Start()
+    {
+        testEvent.Run();
     }
 
     private void Update()

@@ -5,6 +5,7 @@ using DG.Tweening;
 public class Player : MonoBehaviour
 {
     [HideInInspector] public bool isUsingStairsOrLadder;
+    [HideInInspector] public bool dialogueIsPlaying;
 
     [SerializeField] private float speed;
 
@@ -59,7 +60,7 @@ public class Player : MonoBehaviour
     // Handles the horizontal input and uses it to move the player horizontally
     private void HandleHorizontalMovement()
     {
-        if (!isUsingStairsOrLadder)
+        if (!isUsingStairsOrLadder && !dialogueIsPlaying)
         {
             float moveHorizontal = Input.GetAxis("Horizontal");
             rb.velocity = new Vector2(moveHorizontal * speed, 0);
