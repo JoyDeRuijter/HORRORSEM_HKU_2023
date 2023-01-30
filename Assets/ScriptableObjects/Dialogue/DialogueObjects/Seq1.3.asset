@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da913ce75fcfa474aa75cb8aea4a0af5, type: 3}
+  m_Name: Seq1.3
+  m_EditorClassIdentifier: 
+  speaker: {fileID: 11400000, guid: 3945ead0668a7de46ba84aa6f506ec38, type: 2}
+  dialogue:
+  - '"That''s great to hear gran!
+
+    I''m doing great as well."'
+  - '"I was in the neighbourhood, so I thought I''d stop by and check in on my grandma
+    hahaha"'
+  isDone: 0

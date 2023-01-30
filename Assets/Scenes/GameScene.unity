@@ -468,6 +468,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDark: 0
   playerIsHere: 0
+  ID: 0
   roomSet: {fileID: 11400000, guid: dcff4f1be0c422147b93f11effdaa26b, type: 2}
   roomLight: {fileID: 1847874987}
 --- !u!1 &335559345
@@ -1520,6 +1521,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDark: 0
   playerIsHere: 0
+  ID: 5
   roomSet: {fileID: 11400000, guid: 370cf068d7d77a047b9fd86ce7e07c8f, type: 2}
   roomLight: {fileID: 992620287}
 --- !u!1 &667517203
@@ -1680,6 +1682,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDark: 0
   playerIsHere: 0
+  ID: 3
   roomSet: {fileID: 11400000, guid: 44f4db4b8dcca244b9a9c5705d0dc025, type: 2}
   roomLight: {fileID: 1756040716}
 --- !u!1 &740628693
@@ -1824,6 +1827,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDark: 0
   playerIsHere: 0
+  ID: 8
   roomSet: {fileID: 11400000, guid: b75eabe66c566664ca8e281fb33996a1, type: 2}
   roomLight: {fileID: 967057684}
 --- !u!1 &797855004
@@ -1984,6 +1988,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDark: 0
   playerIsHere: 0
+  ID: 7
   roomSet: {fileID: 11400000, guid: f5b9f644935a44e478ca27aa6f4d3e6e, type: 2}
   roomLight: {fileID: 649557157}
 --- !u!1 &903359243
@@ -2211,6 +2216,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDark: 0
   playerIsHere: 0
+  ID: 1
   roomSet: {fileID: 11400000, guid: ef77e8b35d101474fafa7b748eb03be7, type: 2}
   roomLight: {fileID: 933752243}
 --- !u!1 &933752241
@@ -3105,6 +3111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDark: 0
   playerIsHere: 0
+  ID: 9
   roomSet: {fileID: 11400000, guid: 64c67b8e31b462e488a8d5b7082c65ee, type: 2}
   roomLight: {fileID: 1582682553}
 --- !u!1 &1030223330
@@ -3207,6 +3214,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDark: 0
   playerIsHere: 0
+  ID: 6
   roomSet: {fileID: 11400000, guid: bddf14b804207d84eab33b32bd88875a, type: 2}
   roomLight: {fileID: 1258456645}
 --- !u!1 &1049714327
@@ -3484,6 +3492,7 @@ GameObject:
   - component: {fileID: 1082434993}
   - component: {fileID: 1082434992}
   - component: {fileID: 1082434994}
+  - component: {fileID: 1082434995}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3506,6 +3515,7 @@ MonoBehaviour:
   player: {fileID: 1288892599}
   houseManager: {fileID: 238046041}
   dialogueManager: {fileID: 1082434994}
+  playerRoomBlock: {fileID: 0}
 --- !u!4 &1082434993
 Transform:
   m_ObjectHideFlags: 0
@@ -3534,9 +3544,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueSequences:
-  - {fileID: 11400000, guid: e596112780132184497fd9e2ea112bf4, type: 2}
+  - {fileID: 11400000, guid: ad6aa2a6a92977a43b7d35728a52a673, type: 2}
   pressedSpace: 0
   dialogueUI: {fileID: 1471081243}
+--- !u!114 &1082434995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1082434991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f85bf0ef0e958d8449962c577f7032b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1177995263
 GameObject:
   m_ObjectHideFlags: 0
@@ -4262,6 +4284,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDark: 0
   playerIsHere: 0
+  ID: 2
   roomSet: {fileID: 11400000, guid: 738af341ac0f3ba4abc9cf8384aab285, type: 2}
   roomLight: {fileID: 1785799293}
 --- !u!1 &1281065315
@@ -4550,6 +4573,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDark: 0
   playerIsHere: 0
+  ID: 4
   roomSet: {fileID: 11400000, guid: 311f855fadbf96347bc848c164af9888, type: 2}
   roomLight: {fileID: 589182013}
 --- !u!1 &1471081238
@@ -4802,6 +4826,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDark: 0
   playerIsHere: 0
+  ID: 10
   roomSet: {fileID: 11400000, guid: 5281ca3e47e3e8e4aa3c02c0d081de08, type: 2}
   roomLight: {fileID: 1049714329}
 --- !u!1 &1577460809

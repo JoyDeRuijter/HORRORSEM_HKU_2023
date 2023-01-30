@@ -8,6 +8,7 @@ public class RoomBlock : MonoBehaviour
     [HideInInspector] public bool isDark;
     [HideInInspector] public bool playerIsHere;
 
+    public int ID;
     public RoomSet roomSet;
     public Light2D roomLight;
 
