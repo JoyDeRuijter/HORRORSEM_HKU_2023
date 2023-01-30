@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -9,7 +10,6 @@ public class GameManager : MonoBehaviour
     public DialogueManager dialogueManager;
 
     public RoomBlock playerRoomBlock;
-    DialogueEvent testEvent;
 
     private void Awake()
     {
@@ -19,19 +19,34 @@ public class GameManager : MonoBehaviour
             Instance = this;
 
         dialogueManager = GetComponent<DialogueManager>();
-
-        //testEvent = new DialogueEvent(0);
     }
 
     private void Start()
     {
-        //testEvent.Run();
+        StartHouse();
     }
 
     private void Update()
     {
         CheckPlayerPosition();
         HandleStairsAndLadderInput();    
+    }
+
+    private void StartHouse()
+    {
+
+        List<Event> startEvents = new List<Event>()
+        {
+            new RoomEvent(0, 0, RoomEventType.MAKEALLNORMAL){ },
+            new LightEvent(0, LightEventType.ALLOFF){ },
+            new LightEvent(7, LightEventType.ON){ },
+            new LightEvent(8, LightEventType.ON){ },
+            new LightEvent(9, LightEventType.ON){ },
+            new LightEvent(10, LightEventType.ON){ }
+        };
+
+        foreach(Event e in startEvents)
+            e.Run();
     }
 
     // Saves the current roomblock the player is in

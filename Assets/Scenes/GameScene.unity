@@ -348,6 +348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f81c7c1100ff3f4438816c1a63a94fb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  automaticLights: 0
   roomBlocks:
   - {fileID: 249730478}
   - {fileID: 927582776}
@@ -466,7 +467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe0ffa3007ac40945819f0ff01898b96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDark: 0
+  isScary: 0
   playerIsHere: 0
   ID: 0
   roomSet: {fileID: 11400000, guid: dcff4f1be0c422147b93f11effdaa26b, type: 2}
@@ -1519,7 +1520,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe0ffa3007ac40945819f0ff01898b96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDark: 0
+  isScary: 0
   playerIsHere: 0
   ID: 5
   roomSet: {fileID: 11400000, guid: 370cf068d7d77a047b9fd86ce7e07c8f, type: 2}
@@ -1680,7 +1681,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe0ffa3007ac40945819f0ff01898b96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDark: 0
+  isScary: 0
   playerIsHere: 0
   ID: 3
   roomSet: {fileID: 11400000, guid: 44f4db4b8dcca244b9a9c5705d0dc025, type: 2}
@@ -1825,7 +1826,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe0ffa3007ac40945819f0ff01898b96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDark: 0
+  isScary: 0
   playerIsHere: 0
   ID: 8
   roomSet: {fileID: 11400000, guid: b75eabe66c566664ca8e281fb33996a1, type: 2}
@@ -1986,7 +1987,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe0ffa3007ac40945819f0ff01898b96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDark: 0
+  isScary: 0
   playerIsHere: 0
   ID: 7
   roomSet: {fileID: 11400000, guid: f5b9f644935a44e478ca27aa6f4d3e6e, type: 2}
@@ -2214,7 +2215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe0ffa3007ac40945819f0ff01898b96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDark: 0
+  isScary: 0
   playerIsHere: 0
   ID: 1
   roomSet: {fileID: 11400000, guid: ef77e8b35d101474fafa7b748eb03be7, type: 2}
@@ -3109,7 +3110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe0ffa3007ac40945819f0ff01898b96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDark: 0
+  isScary: 0
   playerIsHere: 0
   ID: 9
   roomSet: {fileID: 11400000, guid: 64c67b8e31b462e488a8d5b7082c65ee, type: 2}
@@ -3212,7 +3213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe0ffa3007ac40945819f0ff01898b96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDark: 0
+  isScary: 0
   playerIsHere: 0
   ID: 6
   roomSet: {fileID: 11400000, guid: bddf14b804207d84eab33b32bd88875a, type: 2}
@@ -3575,7 +3576,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1177995264
 Transform:
   m_ObjectHideFlags: 0
@@ -4282,7 +4283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe0ffa3007ac40945819f0ff01898b96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDark: 0
+  isScary: 0
   playerIsHere: 0
   ID: 2
   roomSet: {fileID: 11400000, guid: 738af341ac0f3ba4abc9cf8384aab285, type: 2}
@@ -4571,7 +4572,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe0ffa3007ac40945819f0ff01898b96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDark: 0
+  isScary: 0
   playerIsHere: 0
   ID: 4
   roomSet: {fileID: 11400000, guid: 311f855fadbf96347bc848c164af9888, type: 2}
@@ -4824,7 +4825,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe0ffa3007ac40945819f0ff01898b96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDark: 0
+  isScary: 0
   playerIsHere: 0
   ID: 10
   roomSet: {fileID: 11400000, guid: 5281ca3e47e3e8e4aa3c02c0d081de08, type: 2}

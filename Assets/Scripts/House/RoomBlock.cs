@@ -5,7 +5,7 @@ using System.Collections;
 
 public class RoomBlock : MonoBehaviour
 {
-    [HideInInspector] public bool isDark;
+    [HideInInspector] public bool isScary;
     [HideInInspector] public bool playerIsHere;
 
     public int ID;
@@ -38,13 +38,13 @@ public class RoomBlock : MonoBehaviour
 
     private void UpdateSprite()
     {
-        if (isDark && currentSprite != roomSet.roomSprites[1])
+        if (isScary && currentSprite != roomSet.roomSprites[1])
         {
             spriteRenderer.sprite = roomSet.roomSprites[1];
             currentSprite = spriteRenderer.sprite;
         }
 
-        else if (!isDark && currentSprite != roomSet.roomSprites[0])
+        else if (!isScary && currentSprite != roomSet.roomSprites[0])
         {
             spriteRenderer.sprite = roomSet.roomSprites[0];
             currentSprite = spriteRenderer.sprite;

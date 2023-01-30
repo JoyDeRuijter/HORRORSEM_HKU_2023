@@ -6,7 +6,6 @@ public abstract class Sequence
 {
     public int ID;
     public SequenceState state;
-    public abstract void Initialize();
     public abstract bool IsTriggered();
     public abstract IEnumerator Run();
 

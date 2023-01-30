@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class FirstSequence : Sequence
 {
-    public override void Initialize()
+    public FirstSequence()
     {
         ID = 0;
         state = SequenceState.WAITING;
@@ -15,12 +15,6 @@ public class FirstSequence : Sequence
     public override bool IsTriggered()
     {
         gameManager = GameManager.Instance;
-        Debug.Log("GameManager: " + gameManager);
-        if (gameManager.playerRoomBlock != null)
-        { 
-            Debug.Log("PlayerRoomBlock: " + gameManager.playerRoomBlock);
-            Debug.Log("PlayerRoomBlockID: " + gameManager.playerRoomBlock.ID);
-        }
 
         // Replace later with task is done?
         if (gameManager.playerRoomBlock != null && gameManager.playerRoomBlock.ID == 9)
@@ -35,6 +29,7 @@ public class FirstSequence : Sequence
     {
         DialogueEvent niceGrandmaDialogue = new DialogueEvent(0);
         niceGrandmaDialogue.Run();
+        gameManager.houseManager.automaticLights = true;
         // start new task
         state = SequenceState.DONE;
         yield return null;

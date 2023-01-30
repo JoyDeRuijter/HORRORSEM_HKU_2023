@@ -32,7 +32,6 @@ public class SequenceManager : MonoBehaviour
     private void InitializeSequences()
     {
         FirstSequence firstSequence = new FirstSequence();
-        firstSequence.Initialize();
         sequences.Enqueue(firstSequence);
     }
 }

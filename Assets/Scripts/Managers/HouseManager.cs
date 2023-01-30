@@ -1,11 +1,15 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class HouseManager : MonoBehaviour
 {
+    [HideInInspector] public bool automaticLights;
+
     [SerializeField] private RoomBlock[] roomBlocks = new RoomBlock[11];
     [SerializeField] private Door[] doors = new Door[7];
 
     private Door lastDisabledDoor;
+    private RoomBlock lastRoomBlock;
 
     private void Awake()
     {
@@ -15,25 +19,31 @@ public class HouseManager : MonoBehaviour
 
     private void Update()
     {
-        // Temporary test functionality
-        if (Input.GetKeyDown(KeyCode.F))
-            TestLightsOnOff();
-
-        // Temporary test functionality
-        if (Input.GetKeyDown(KeyCode.R))
-            TestDisableEnableDoors();
-
-        // Temporary test functionality
-        //if (Input.GetKeyDown(KeyCode.H))
-        //    FlickerRandomRoomLight();
-
+        if (automaticLights)
+            AutomateLights(new List<int>() {0, 1, 2, 3, 4, 5, 6 });
     }
 
-    // Test method that turn all the lights on or off
-    private void TestLightsOnOff()
+    // Method that turn all the rooms to normal sprites
+    public void TurnAllRoomsNormal()
     {
         foreach (RoomBlock rb in roomBlocks)
-            rb.isDark = !rb.isDark;
+            rb.isScary = false;
+    }
+
+    public void TurnAllRoomsScary()
+    {
+        foreach (RoomBlock rb in roomBlocks)
+            rb.isScary = true;
+    }
+
+    public void TurnRoomNormal(int _roomIndex)
+    {
+        roomBlocks[_roomIndex].isScary = false;
+    }
+
+    public void TurnRoomScary(int _roomIndex)
+    {
+        roomBlocks[_roomIndex].isScary = true;
     }
 
     public void SwitchRooms(int _roomIndex1, int _roomIndex2)
@@ -166,5 +176,21 @@ public class HouseManager : MonoBehaviour
             return 5;
         else
             return 4;
+    }
+
+    private void AutomateLights(List<int> _roomIndexes)
+    {
+        if (lastRoomBlock == null && currentPlayerPosition() != null)
+            lastRoomBlock = currentPlayerPosition();
+
+        if (currentPlayerPosition() != lastRoomBlock)
+        {
+            if (_roomIndexes.Contains(currentPlayerPosition().ID))
+                currentPlayerPosition().TurnLightOnSlow();
+            if (_roomIndexes.Contains(lastRoomBlock.ID))
+                lastRoomBlock.TurnLightOff();
+
+            lastRoomBlock = currentPlayerPosition();
+        }
     }
 }
