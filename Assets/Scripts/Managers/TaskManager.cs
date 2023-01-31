@@ -9,56 +9,75 @@ public class TaskManager : MonoBehaviour
     [Header("Task UI")]
     [SerializeField] private GameObject taskBar;
     [SerializeField] private TMP_Text textLabel;
-    [SerializeField] private Image image;
+    public Image image;
 
     [Space(10)]
     [Header("(un)completed sprites")]
-    [SerializeField] private Sprite completedSprite;
-    [SerializeField] private Sprite uncompletedSprite;
+    public Sprite completedSprite;
+    public Sprite uncompletedSprite;
 
     [Space(10)]
     [Header("Tasks")]
     public Task[] tasks;
 
+    [HideInInspector] public Task currentTask;
     [SerializeField] private GameManager gameManager;
-    private Task currentTask;
-    private int currentTaskIndex = 0;
+    public int currentTaskIndex = 0;
+
+    [HideInInspector] public bool taskOneComplete = false;
+    [HideInInspector] public bool taskFourComplete = false;
+
 
     private void Update()
     {
         StartCoroutine(CheckIfTaskIsCompleted());
-
     }
 
     private void ShowTaskBar()
-    { 
+    {
+        if (taskBar.activeSelf == true)
+            return;
         taskBar.SetActive(true);
     }
 
     public void HideTaskBar() 
-    { 
+    {
+        if (taskBar.activeSelf == false)
+            return;
         taskBar.SetActive(false); 
     }
 
+    public void ManuallyUpdateToUncompleted()
+    {
+        currentTask.isCompleted = false;
+        image.sprite = uncompletedSprite;
+    }
+
     public IEnumerator CompleteTask(bool _shouldClose)
-    { 
+    {
+        if (currentTask.isCompleted)
+            yield break;
+        Debug.Log("COMPLETED TASK WITH INDEX: " + currentTaskIndex);
         image.sprite = completedSprite;
         currentTask.isCompleted = true;
         if (_shouldClose)
         { 
             yield return new WaitForSeconds(3f);
-            HideTaskBar();        
+            HideTaskBar();
         }
     }
 
     public void StartNewTask(int _taskIndex)
     {
-        image.sprite = null;
+        Debug.Log("should start new task with taskindex: " + _taskIndex);
+        ShowTaskBar();
         currentTaskIndex = _taskIndex;
         currentTask = tasks[_taskIndex];
+        currentTask.isCompleted = false;
+        image.sprite = null;
         image.sprite = uncompletedSprite;
         textLabel.text = currentTask.taskDescription;
-        ShowTaskBar();
+        Debug.Log("should show new task with taskindex: " + _taskIndex);
     }
 
     private IEnumerator CheckIfTaskIsCompleted()
@@ -70,20 +89,22 @@ public class TaskManager : MonoBehaviour
                     StartCoroutine(CompleteTask(true));
                 break;
             case 1:
-                if (gameManager.playerRoomBlock != null && gameManager.playerRoomBlock.ID == 2)
-                {
-                    yield return new WaitForSeconds(6f);
+                if (taskOneComplete)
                     StartCoroutine(CompleteTask(false));
-                    //yield return new WaitForSeconds(3f);
-                    if (tasks[1].isCompleted)
-                    { 
-                        StartNewTask(2);
-                        break;
-                    }
-                }
                 break;
             case 2:
                 if (gameManager.playerRoomBlock != null && gameManager.playerRoomBlock.ID == 9)
+                    StartCoroutine(CompleteTask(true));
+                break;
+            case 3:
+                if (gameManager.playerRoomBlock != null && gameManager.playerRoomBlock.ID == 7)
+                { 
+                    yield return new WaitForSeconds(0.25f);
+                    StartCoroutine(CompleteTask(true));
+                }
+                break;
+            case 4:
+                if (taskFourComplete)
                     StartCoroutine(CompleteTask(true));
                 break;
             default:

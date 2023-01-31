@@ -10,15 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: da913ce75fcfa474aa75cb8aea4a0af5, type: 3}
-  m_Name: Seq1.2
+  m_Name: Seq3.2
   m_EditorClassIdentifier: 
-  speaker: {fileID: 11400000, guid: c2e161cc4a4d7684286ca655665c113b, type: 2}
+  speaker: {fileID: 11400000, guid: 3945ead0668a7de46ba84aa6f506ec38, type: 2}
   dialogue:
-  - '"Oh Derek, what a pleasant surprise!
+  - '"Uh...
 
-    I''m good, even better now that you''re
-    here."'
-  - '"How have you been my boy?
-
-    And to what do I owe this lovely visit?"'
-  isDone: 1
+    Yeah..."'
+  - '"And now what?"'
+  isDone: 0

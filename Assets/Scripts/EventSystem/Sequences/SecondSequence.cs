@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class SecondSequence : Sequence
 {
@@ -15,7 +16,9 @@ public class SecondSequence : Sequence
     {
         gameManager = GameManager.Instance;
 
-        if (gameManager.playerRoomBlock != null && gameManager.playerRoomBlock.ID == 9)
+        if (gameManager.playerRoomBlock != null
+            && gameManager.sequenceManager.sequences.Peek() == this
+            && gameManager.taskManager.tasks[1].isCompleted)
             return true;
 
         return false;
@@ -23,6 +26,16 @@ public class SecondSequence : Sequence
 
     public override IEnumerator Run()
     {
+        Debug.Log("RUN SECOND SEQUENCE");
+        yield return new WaitUntil(() => gameManager.taskManager.tasks[1].isCompleted == true);
+        yield return new WaitForSeconds(3f);
+        gameManager.taskManager.StartNewTask(2);
+        yield return new WaitForSeconds(0.5f);
+        gameManager.taskManager.ManuallyUpdateToUncompleted();
+        Debug.Log("THIIIISSSS: CURRENTTASK.ISCOMPLETED: " + gameManager.taskManager.currentTask.isCompleted);
+        Debug.Log("THIIIISSSS: SPRITE: " + gameManager.taskManager.image.sprite);
+        yield return new WaitUntil(() => gameManager.taskManager.tasks[2].isCompleted == true);
+        yield return new WaitUntil(() => gameManager.playerRoomBlock.ID == 9);
         DialogueEvent paintingGrandmaDialogue = new DialogueEvent(1);
         paintingGrandmaDialogue.Run();
         yield return new WaitUntil(() => paintingGrandmaDialogue.State == EventState.DONE);
@@ -33,13 +46,23 @@ public class SecondSequence : Sequence
         lightsOffGrandmaDialogue.Run();
         yield return new WaitUntil(() => lightsOffGrandmaDialogue.State == EventState.DONE);
         gameManager.taskManager.StartNewTask(3);
-        yield return new WaitUntil(() => gameManager.taskManager.tasks[3].isCompleted == true);
+        yield return new WaitForSeconds(0.2f);
+        gameManager.taskManager.ManuallyUpdateToUncompleted();
+        yield return new WaitUntil(() => gameManager.taskManager.tasks[3].isCompleted == true && gameManager.playerRoomBlock.ID == 7);
+        yield return new WaitForSeconds(0.25f);
         gameManager.player.flashLight.enabled = true;
         gameManager.player.flashLight.TurnOnFlashLight();
         RoomEvent switchLivingroomEvent = new RoomEvent(9, 3, RoomEventType.SWITCH);
+        switchLivingroomEvent.Run();
         DialogueEvent whereIsGrandmaDialogue = new DialogueEvent(3);
         gameManager.grandma.SetActive(false);
         whereIsGrandmaDialogue.Run();
         gameManager.taskManager.StartNewTask(4);
+        yield return new WaitForSeconds(0.2f);
+        gameManager.taskManager.ManuallyUpdateToUncompleted();
+        yield return new WaitUntil(() => gameManager.playerRoomBlock.ID == 9);
+        yield return new WaitForSeconds(0.2f);
+        gameManager.taskManager.taskFourComplete = true;
+        state = SequenceState.DONE;
     }
 }

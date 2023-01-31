@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfa0eeb5c10cba6439265e8c75985167, type: 3}
+  m_Name: Seq3
+  m_EditorClassIdentifier: 
+  sequenceName: LightsOut
+  dialogueObjects:
+  - {fileID: 11400000, guid: 61507d206116cd947a75509509ed3b7a, type: 2}
+  - {fileID: 11400000, guid: e992e1f5527084144b712c5b093b682e, type: 2}
+  - {fileID: 11400000, guid: 1a384903c644a644c9925c4bc6f30ef0, type: 2}
+  - {fileID: 11400000, guid: 0ea87ba44f5cdce46adb8ec2458a0b1e, type: 2}

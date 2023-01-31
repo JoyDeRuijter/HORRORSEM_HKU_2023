@@ -3714,6 +3714,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1288892599}
+  grandma: {fileID: 259033653}
   houseManager: {fileID: 238046041}
   dialogueManager: {fileID: 1082434994}
   sequenceManager: {fileID: 1082434995}
@@ -3748,6 +3749,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueSequences:
   - {fileID: 11400000, guid: ad6aa2a6a92977a43b7d35728a52a673, type: 2}
+  - {fileID: 11400000, guid: 4f3defd6bac8d924aa6190ff600ef613, type: 2}
+  - {fileID: 11400000, guid: c493dec5a2868cc41959ac1dd8b28d30, type: 2}
+  - {fileID: 11400000, guid: ce8a7a1193a277d43a20a7e6adf21fe3, type: 2}
   pressedSpace: 0
   dialogueUI: {fileID: 1471081243}
 --- !u!114 &1082434995
@@ -3783,6 +3787,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b1c128205ec68234cb92056b5a4a7d96, type: 2}
   - {fileID: 11400000, guid: 92d0ed68cf44da245891e53da9357e1f, type: 2}
   - {fileID: 11400000, guid: dc0fafa504635694b8c804a00c055a42, type: 2}
+  - {fileID: 11400000, guid: bd820eb956f7bc442b7b851dbd081711, type: 2}
+  - {fileID: 11400000, guid: 92e4a3047f157094e945ec5123e15049, type: 2}
   gameManager: {fileID: 1082434992}
 --- !u!1 &1177995263
 GameObject:

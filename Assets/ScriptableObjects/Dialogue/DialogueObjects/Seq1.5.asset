@@ -18,5 +18,4 @@ MonoBehaviour:
 
     I''ll go upstairs to check it out then!"'
   - '"I''m sure that I''ll love it, you are a great artist gran."'
-  - '"I''ll be right back."'
-  isDone: 0
+  isDone: 1

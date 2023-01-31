@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         CheckPlayerPosition();
-        HandleStairsAndLadderInput();    
+        HandleStairsAndLadderInput();
     }
 
     private void StartHouse()
@@ -87,4 +87,13 @@ public class GameManager : MonoBehaviour
             StartCoroutine(player.UseStairsOrLadder(rb.gameObject, false, rb.roomSet.lowPositionPlayerAsChild, rb.roomSet.highPositionPlayerAsChild));
         }
     }
+
+    //// Update the taskbar image because there seems to be a problem with that within the taskmanager
+    //private void UpdateTaskbarImage()
+    //{
+    //    if (taskManager.currentTask.isCompleted && taskManager.image.sprite != taskManager.completedSprite)
+    //        taskManager.ManuallyUpdateToCompleted();
+    //    else if (!taskManager.currentTask.isCompleted && taskManager.image.sprite != taskManager.uncompletedSprite)
+    //        taskManager.ManuallyUpdateToUncompleted();
+    //}
 }

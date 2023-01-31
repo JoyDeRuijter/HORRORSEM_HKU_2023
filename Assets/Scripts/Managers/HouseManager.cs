@@ -17,6 +17,11 @@ public class HouseManager : MonoBehaviour
         TurnOffAllLights();
     }
 
+    private void Start()
+    {
+        automaticLights = true;
+    }
+
     private void Update()
     {
         // should fix this somehow

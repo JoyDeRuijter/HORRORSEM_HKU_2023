@@ -10,17 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: da913ce75fcfa474aa75cb8aea4a0af5, type: 3}
-  m_Name: Test3
+  m_Name: Seq3.1
   m_EditorClassIdentifier: 
-  speaker: {fileID: 11400000, guid: 98ada3e5ad5231048b8d252640a63d14, type: 2}
+  speaker: {fileID: 11400000, guid: c2e161cc4a4d7684286ca655665c113b, type: 2}
   dialogue:
-  - 'Bim bam bom
+  - '"...
 
-    Jij bent dom'
-  - 'Nog een verhaaltje kan geen kwaad
-
-    je moeder is dik'
-  - 'Derde element hier hahaha
-
-    wooooohoo!!'
+    Well this is inconvenient."'
   isDone: 0

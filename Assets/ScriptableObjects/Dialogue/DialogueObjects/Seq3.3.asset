@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: da913ce75fcfa474aa75cb8aea4a0af5, type: 3}
-  m_Name: Test4
+  m_Name: Seq3.3
   m_EditorClassIdentifier: 
   speaker: {fileID: 11400000, guid: c2e161cc4a4d7684286ca655665c113b, type: 2}
   dialogue:
-  - 'Guess who''s back back..
+  - '"Could you get the flashlights from the kitchen please?"'
+  - '"They are in the first cabinet on the right.
 
-    Back again, again..'
-  - 'Granny''s back back..
-
-    Tell a friend friend..'
+    Should be easy to find, even
+    in the dark."'
+  - '"If we have those, we can get to the fusebox in the attic."'
   isDone: 0
