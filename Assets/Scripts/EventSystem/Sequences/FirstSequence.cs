@@ -16,12 +16,9 @@ public class FirstSequence : Sequence
     {
         gameManager = GameManager.Instance;
 
-        // Replace later with task is done?
         if (gameManager.playerRoomBlock != null && gameManager.playerRoomBlock.ID == 9)
-        {
-            Debug.Log("IS TRIGGERED");
             return true;
-        }
+
         return false;
     }
 
@@ -30,8 +27,9 @@ public class FirstSequence : Sequence
         DialogueEvent niceGrandmaDialogue = new DialogueEvent(0);
         niceGrandmaDialogue.Run();
         gameManager.houseManager.automaticLights = true;
-        // start new task
         state = SequenceState.DONE;
+        yield return new WaitUntil(() => niceGrandmaDialogue.State == EventState.DONE);
+        gameManager.taskManager.StartNewTask(1);
         yield return null;
     }
 }

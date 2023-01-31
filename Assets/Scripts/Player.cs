@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     [HideInInspector] public bool isUsingStairsOrLadder;
     [HideInInspector] public bool dialogueIsPlaying;
+    [HideInInspector] public Flashlight flashLight;
 
     [SerializeField] private float speed;
 
@@ -16,6 +17,8 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         bc = GetComponent<BoxCollider2D>();
+        flashLight = GetComponent<Flashlight>();
+        flashLight.enabled = false;
     }
 
     private void Update()

@@ -6,8 +6,11 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
     
     public Player player;
+    public GameObject grandma;
     public HouseManager houseManager;
     public DialogueManager dialogueManager;
+    public SequenceManager sequenceManager;
+    public TaskManager taskManager;
 
     public RoomBlock playerRoomBlock;
 
@@ -24,6 +27,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         StartHouse();
+        taskManager.StartNewTask(0);
     }
 
     private void Update()

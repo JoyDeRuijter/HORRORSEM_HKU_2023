@@ -19,6 +19,7 @@ public class HouseManager : MonoBehaviour
 
     private void Update()
     {
+        // should fix this somehow
         if (automaticLights)
             AutomateLights(new List<int>() {0, 1, 2, 3, 4, 5, 6 });
     }
