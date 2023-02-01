@@ -69,15 +69,15 @@ public class RoomBlock : MonoBehaviour
     public IEnumerator FlickerLight()
     {
         TurnLightOn();
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.25f);
         TurnLightOff();
         yield return new WaitForSeconds(0.1f);
         TurnLightOn();
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.2f);
         TurnLightOff();
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.2f);
         TurnLightOn();
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.3f);
         TurnLightOff();
     }
 }

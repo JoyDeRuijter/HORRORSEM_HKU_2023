@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Task5
   m_EditorClassIdentifier: 
   name: SearchForGrandma
-  taskDescription: Search the second floor for grandma
-  isCompleted: 0
+  taskDescription: Search the first floor for grandma
+  isCompleted: 1

@@ -10,8 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dfa0eeb5c10cba6439265e8c75985167, type: 3}
-  m_Name: Seq5
+  m_Name: Seq10
   m_EditorClassIdentifier: 
-  sequenceName: What?
+  sequenceName: GrandmaTired
   dialogueObjects:
-  - {fileID: 11400000, guid: 756786e00c9c43248bf8e57fadc28109, type: 2}
+  - {fileID: 11400000, guid: ada83735379775942b9110a8f0ec0248, type: 2}
+  - {fileID: 11400000, guid: f764326bc98ae3940ae7725c9817d094, type: 2}
+  - {fileID: 11400000, guid: d281c83802c7be44f83fa107c89d4a76, type: 2}

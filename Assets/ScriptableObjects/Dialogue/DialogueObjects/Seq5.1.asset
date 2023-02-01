@@ -16,12 +16,8 @@ MonoBehaviour:
   dialogue:
   - '"...
 
-    What the f*ck is going on?"'
+    what?"'
   - '"...
 
-    Gran???"'
-  - '"GRANDMA?!
-
-    WHERE ARE YOU???"'
-  - '"..."'
-  isDone: 0
+    gran?"'
+  isDone: 1

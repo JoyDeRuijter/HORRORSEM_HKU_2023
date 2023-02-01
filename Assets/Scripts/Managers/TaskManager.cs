@@ -26,6 +26,9 @@ public class TaskManager : MonoBehaviour
 
     [HideInInspector] public bool taskOneComplete = false;
     [HideInInspector] public bool taskFourComplete = false;
+    [HideInInspector] public bool taskFiveComplete = false;
+    [HideInInspector] public bool taskSixComplete = false;
+    [HideInInspector] public bool taskSevenComplete = false;
 
 
     private void Update()
@@ -85,23 +88,35 @@ public class TaskManager : MonoBehaviour
         switch (currentTaskIndex)
         { 
             case 0:
-                if (gameManager.playerRoomBlock != null && gameManager.playerRoomBlock.ID == 10)
+                if (gameManager.playerRoomBlock != null && gameManager.playerRoomBlock.ID == 10 && !currentTask.isCompleted)
                     StartCoroutine(CompleteTask(true));
                 break;
             case 1:
-                if (taskOneComplete)
+                if (taskOneComplete && !currentTask.isCompleted)
                     StartCoroutine(CompleteTask(false));
                 break;
             case 2:
-                if (gameManager.playerRoomBlock != null && gameManager.playerRoomBlock.ID == 9)
+                if (gameManager.playerRoomBlock != null && gameManager.playerRoomBlock.ID == 9 && !currentTask.isCompleted)
                     StartCoroutine(CompleteTask(true));
                 break;
             case 3:
-                if (gameManager.playerRoomBlock != null && gameManager.playerRoomBlock.ID == 7)
+                if (gameManager.playerRoomBlock != null && gameManager.playerRoomBlock.ID == 7 && !currentTask.isCompleted)
                     StartCoroutine(CompleteTask(true));
                 break;
             case 4:
-                if (gameManager.playerRoomBlock != null && gameManager.playerRoomBlock.ID == 9 && taskFourComplete)
+                if (gameManager.playerRoomBlock != null && gameManager.playerRoomBlock.ID == 9 && taskFourComplete && !currentTask.isCompleted)
+                    StartCoroutine(CompleteTask(true));
+                break;
+            case 5:
+                if (gameManager.playerRoomBlock != null && gameManager.playerRoomBlock.ID == 3 && taskFiveComplete && !currentTask.isCompleted)
+                    StartCoroutine(CompleteTask(true));
+                break;
+            case 6:
+                if (gameManager.playerRoomBlock != null && gameManager.playerRoomBlock.ID == 5 && taskSixComplete && !currentTask.isCompleted)
+                    StartCoroutine(CompleteTask(true));
+                break;
+            case 7:
+                if (gameManager.playerRoomBlock != null && gameManager.playerRoomBlock.ID == 2 && taskSevenComplete && !currentTask.isCompleted)
                     StartCoroutine(CompleteTask(true));
                 break;
             default:

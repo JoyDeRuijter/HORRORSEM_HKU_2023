@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speaker: {fileID: 11400000, guid: 3945ead0668a7de46ba84aa6f506ec38, type: 2}
   dialogue:
-  - '"Gran try to stay calm.
+  - '"GRAN TRY TO STAY CALM!
 
-    I''m on my way!"'
-  isDone: 0
+    I''M ON MY WAY!"'
+  isDone: 1
