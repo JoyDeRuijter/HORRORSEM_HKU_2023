@@ -225,7 +225,7 @@ public class HouseManager : MonoBehaviour
         if (lastRoomBlock == null && currentPlayerPosition() != null)
             lastRoomBlock = currentPlayerPosition();
 
-        if (currentPlayerPosition() != lastRoomBlock)
+        if (currentPlayerPosition() != lastRoomBlock && currentPlayerPosition() != null)
         {
             if (_roomIndexes.Contains(currentPlayerPosition().ID))
                 currentPlayerPosition().TurnLightOnSlow();
