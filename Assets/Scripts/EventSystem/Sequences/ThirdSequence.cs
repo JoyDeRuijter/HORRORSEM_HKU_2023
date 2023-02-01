@@ -76,7 +76,7 @@ public class ThirdSequence : Sequence
         gameManager.taskManager.ManuallyUpdateToUncompleted();
         yield return new WaitUntil(() => gameManager.playerRoomBlock.ID == 2);
         gameManager.taskManager.taskSevenComplete = true;
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.8f);
         
         DialogueEvent dialogueEventPainting = new DialogueEvent(8);
         dialogueEventPainting.Run();
@@ -90,6 +90,7 @@ public class ThirdSequence : Sequence
         doorEvent6.Run();
         RoomEvent roomEvent5 = new RoomEvent(6, 10, RoomEventType.SWITCH);
         roomEvent5.Run();
+        gameManager.grandma.SetActive(true);
         gameManager.grandma.transform.Rotate(0, 0, 90);
         gameManager.grandma.transform.position = new Vector3(0.8f, -2.6f, 0);
         yield return new WaitUntil(() => dialogueEventPainting.State == EventState.DONE);
@@ -109,6 +110,43 @@ public class ThirdSequence : Sequence
         dialogueEventConfusion.Run();
         yield return new WaitUntil(() => dialogueEventConfusion.State == EventState.DONE);
         gameManager.grandma.SetActive(false);
+        gameManager.taskManager.StartNewTask(8);
+        gameManager.taskManager.ManuallyUpdateToUncompleted();
+        yield return new WaitForSeconds(0.5f);
+        LightEvent flickerStairs = new LightEvent(6, LightEventType.FLICKER);
+        flickerStairs.Run();
+        yield return new WaitForSeconds(0.5f);
+        flickerStairs.Run();
+        RoomEvent roomEvent6 = new RoomEvent(3, 8, RoomEventType.SWITCH);
+        roomEvent6.Run();
+        yield return new WaitUntil(() => gameManager.playerRoomBlock.ID == 4);
+        LightEvent flickerOtherStairs = new LightEvent(8, LightEventType.FLICKER);
+        flickerOtherStairs.Run();
+        yield return new WaitForSeconds(0.5f);
+        flickerOtherStairs.Run();
+        yield return new WaitUntil(() => gameManager.playerRoomBlock.ID == 8);
+        gameManager.taskManager.taskEightComplete = true;
+        yield return new WaitUntil(() => gameManager.playerRoomBlock.ID == 9);
+
+        DialogueEvent dialogueEventShesGone = new DialogueEvent(11);
+        dialogueEventShesGone.Run();
+        yield return new WaitUntil(() => dialogueEventShesGone.State == EventState.DONE);
+        gameManager.taskManager.StartNewTask(9);
+        gameManager.taskManager.ManuallyUpdateToUncompleted();
+        DoorEvent doorEvent7 = new DoorEvent(6, false);
+        doorEvent7.Run();
+        RoomEvent roomEvent7 = new RoomEvent(4, 7, RoomEventType.SWITCH);
+        roomEvent7.Run();
+        DoorEvent doorEvent8 = new DoorEvent(0, true);
+        doorEvent8.Run();
+        yield return new WaitForSeconds(0.5f);
+        LightEvent flickerAttic = new LightEvent(0, LightEventType.FLICKER);
+        flickerAttic.Run();
+        yield return new WaitForSeconds(0.5f);
+        flickerAttic.Run();
+        yield return new WaitUntil(() => gameManager.playerRoomBlock.ID == 0);
+        yield return new WaitForSeconds(0.2f);
+        gameManager.taskManager.taskNineComplete = true;
 
         state = SequenceState.DONE;
     }

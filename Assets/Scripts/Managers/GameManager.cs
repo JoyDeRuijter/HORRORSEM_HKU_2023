@@ -12,7 +12,9 @@ public class GameManager : MonoBehaviour
     public SequenceManager sequenceManager;
     public TaskManager taskManager;
 
-    public RoomBlock playerRoomBlock;
+    [SerializeField] private GameObject gameOverObject;
+    [HideInInspector] public RoomBlock playerRoomBlock;
+    [HideInInspector] public bool gameIsOver = false;
 
     private void Awake()
     {
@@ -22,6 +24,7 @@ public class GameManager : MonoBehaviour
             Instance = this;
 
         dialogueManager = GetComponent<DialogueManager>();
+        gameOverObject.SetActive(false);
     }
 
     private void Start()
@@ -32,8 +35,11 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        CheckPlayerPosition();
-        HandleStairsAndLadderInput();
+        if (!gameIsOver)
+        { 
+            CheckPlayerPosition();
+            HandleStairsAndLadderInput();
+        }
     }
 
     private void StartHouse()
@@ -86,6 +92,15 @@ public class GameManager : MonoBehaviour
             RoomBlock rb = houseManager.RoomBelowRoom(playerRoomBlock, player);
             StartCoroutine(player.UseStairsOrLadder(rb.gameObject, false, rb.roomSet.lowPositionPlayerAsChild, rb.roomSet.highPositionPlayerAsChild));
         }
+    }
+
+    public void GameIsOver()
+    {
+        gameIsOver = true;
+        gameOverObject.SetActive(true);
+        sequenceManager.enabled = false;
+        taskManager.enabled = false;
+        houseManager.enabled = false;
     }
 
     //// Update the taskbar image because there seems to be a problem with that within the taskmanager

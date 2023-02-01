@@ -10,9 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dfa0eeb5c10cba6439265e8c75985167, type: 3}
-  m_Name: Seq7
+  m_Name: Seq13
   m_EditorClassIdentifier: 
-  sequenceName: GRANDMA!?
+  sequenceName: FuseboxFix
   dialogueObjects:
-  - {fileID: 11400000, guid: 8262a882b49c2d84c9180802ae2d9e5d, type: 2}
-  - {fileID: 11400000, guid: 7bc29e7a2827ac945876b9952500bb54, type: 2}
+  - {fileID: 11400000, guid: b0384144849ae22438d7854f6362a8f3, type: 2}

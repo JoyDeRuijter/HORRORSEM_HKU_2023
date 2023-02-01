@@ -35,6 +35,9 @@ public class LightEvent : Event
             case LightEventType.ALLOFF:
                 houseManager.TurnOffAllLights();
                 break;
+            case LightEventType.ALLONSLOW:
+                houseManager.TurnOnAllLightsSlow();
+                break;
             default:
                 Debug.Log("ERROR: NO LIGHTEVENTTYPE FOUND");
                 break;
@@ -42,4 +45,4 @@ public class LightEvent : Event
     }
 }
 
-public enum LightEventType { ON, OFF, SLOWON, FLICKER, ALLON, ALLOFF}
+public enum LightEventType { ON, OFF, SLOWON, FLICKER, ALLON, ALLOFF, ALLONSLOW}

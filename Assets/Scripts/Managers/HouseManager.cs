@@ -7,7 +7,8 @@ public class HouseManager : MonoBehaviour
 
     [SerializeField] private RoomBlock[] roomBlocks = new RoomBlock[11];
     [SerializeField] private Door[] doors = new Door[7];
-
+    
+    private RoomSet[] roomSets = new RoomSet[11];
     private Door lastDisabledDoor;
     private RoomBlock lastRoomBlock;
 
@@ -15,6 +16,7 @@ public class HouseManager : MonoBehaviour
     {
         //TurnOnAllLights();
         TurnOffAllLights();
+        SaveOriginalRoomsets();
     }
 
     private void Start()
@@ -27,6 +29,14 @@ public class HouseManager : MonoBehaviour
         // should fix this somehow
         if (automaticLights)
             AutomateLights(new List<int>() {0, 1, 2, 3, 4, 5, 6 });
+    }
+
+    private void SaveOriginalRoomsets()
+    {
+        for (int i = 0; i < roomBlocks.Length; i++)
+        {
+            roomSets[i] = roomBlocks[i].roomSet;
+        }
     }
 
     // Method that turn all the rooms to normal sprites
@@ -61,6 +71,14 @@ public class HouseManager : MonoBehaviour
         roomBlocks[_roomIndex2].roomSet = firstSet;
     }
 
+    public void ResetRooms()
+    {
+        for (int i = 0; i < roomBlocks.Length; i++)
+        {
+            roomBlocks[i].roomSet = roomSets[i];
+        }
+    }
+
     public void ActivateDoor(int _doorIndex)
     { 
         if (!doors[_doorIndex].isActive)
@@ -71,6 +89,18 @@ public class HouseManager : MonoBehaviour
     { 
         if (doors[_doorIndex].isActive)
             doors[_doorIndex].isActive = false;
+    }
+
+    public void ActivateAllDoors()
+    { 
+        foreach(Door d in doors)
+            d.isActive = true;
+    }
+
+    public void DeactivateAllDoors()
+    {
+        foreach (Door d in doors)
+            d.isActive = false;
     }
 
     // Test method that disables a random door and re-ables the last disabled door
@@ -110,6 +140,12 @@ public class HouseManager : MonoBehaviour
     { 
         foreach(RoomBlock rb in roomBlocks)
             rb.TurnLightOn();
+    }
+
+    public void TurnOnAllLightsSlow()
+    {
+        for (int i = 7; i < roomBlocks.Length; i++)
+            roomBlocks[i].TurnLightOnSlow();
     }
 
     public void TurnOffAllLights()

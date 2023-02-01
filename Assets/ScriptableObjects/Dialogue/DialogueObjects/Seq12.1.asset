@@ -10,18 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: da913ce75fcfa474aa75cb8aea4a0af5, type: 3}
-  m_Name: Seq11.1
+  m_Name: Seq12.1
   m_EditorClassIdentifier: 
   speaker: {fileID: 11400000, guid: 3945ead0668a7de46ba84aa6f506ec38, type: 2}
   dialogue:
-  - '"Gran what are you talking about?
-
-    Where are you?"'
-  - '"...
+  - '"GRAN??
 
     ..."'
-  - '"GRANDMA?
+  - '"GRANDMA ARE YOU DOWN HERE?
 
-    PLEASE RESPOND!?"'
-  - '"It seemed to be coming from the ground floor..."'
-  isDone: 1
+    ..."'
+  - '"That''s it."'
+  - '"I don''t know what sick game this is,
+
+    but I am done playing."'
+  - '"I''m going to reset the fusebox first..."'
+  - '"I''ll find my hilarious grandma later..."'
+  isDone: 0

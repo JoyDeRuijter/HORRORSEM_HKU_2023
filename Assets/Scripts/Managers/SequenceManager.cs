@@ -27,6 +27,8 @@ public class SequenceManager : MonoBehaviour
         sequences.Enqueue(secondsequence);
         ThirdSequence thirdsequence = new ThirdSequence();
         sequences.Enqueue(thirdsequence);
+        FourthSequence fourthSequence = new FourthSequence();
+        sequences.Enqueue(fourthSequence);
     }
 
     private IEnumerator RunSequences()

@@ -29,6 +29,11 @@ public class TaskManager : MonoBehaviour
     [HideInInspector] public bool taskFiveComplete = false;
     [HideInInspector] public bool taskSixComplete = false;
     [HideInInspector] public bool taskSevenComplete = false;
+    [HideInInspector] public bool taskEightComplete = false;
+    [HideInInspector] public bool taskNineComplete = false;
+    [HideInInspector] public bool taskTenComplete = false;
+    [HideInInspector] public bool taskElevenComplete = false;
+    [HideInInspector] public bool taskTwelveComplete = false;
 
 
     private void Update()
@@ -117,6 +122,26 @@ public class TaskManager : MonoBehaviour
                 break;
             case 7:
                 if (gameManager.playerRoomBlock != null && gameManager.playerRoomBlock.ID == 2 && taskSevenComplete && !currentTask.isCompleted)
+                    StartCoroutine(CompleteTask(true));
+                break;
+            case 8:
+                if (gameManager.playerRoomBlock != null && gameManager.playerRoomBlock.ID == 8 && taskEightComplete && !currentTask.isCompleted)
+                    StartCoroutine(CompleteTask(true));
+                break;
+            case 9:
+                if (gameManager.playerRoomBlock != null && gameManager.playerRoomBlock.ID == 0 && taskNineComplete && !currentTask.isCompleted)
+                    StartCoroutine(CompleteTask(true));
+                break;
+            case 10:
+                if (gameManager.playerRoomBlock == null && taskTenComplete && !currentTask.isCompleted)
+                    StartCoroutine(CompleteTask(true));
+                break;
+            case 11:
+                if (gameManager.playerRoomBlock != null && gameManager.playerRoomBlock.ID == 9 && taskElevenComplete && !currentTask.isCompleted)
+                    StartCoroutine(CompleteTask(true));
+                break;
+            case 12:
+                if (taskTwelveComplete && !currentTask.isCompleted)
                     StartCoroutine(CompleteTask(true));
                 break;
             default:
