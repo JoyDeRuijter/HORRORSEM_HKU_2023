@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: You
   m_EditorClassIdentifier: 
   name: You
-  avatar: {fileID: 21300000, guid: d9a067f05973a89408c8e773ed8a5e96, type: 3}
+  avatar: {fileID: 21300000, guid: e9bfb433de871e8498806b214406fc32, type: 3}
