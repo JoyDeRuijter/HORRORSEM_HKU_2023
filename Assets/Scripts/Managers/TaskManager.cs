@@ -98,17 +98,14 @@ public class TaskManager : MonoBehaviour
                 break;
             case 3:
                 if (gameManager.playerRoomBlock != null && gameManager.playerRoomBlock.ID == 7)
-                { 
-                    yield return new WaitForSeconds(0.25f);
                     StartCoroutine(CompleteTask(true));
-                }
                 break;
             case 4:
-                if (taskFourComplete)
+                if (gameManager.playerRoomBlock != null && gameManager.playerRoomBlock.ID == 9 && taskFourComplete)
                     StartCoroutine(CompleteTask(true));
                 break;
             default:
-                break;
+                yield break;
         
         }
     }

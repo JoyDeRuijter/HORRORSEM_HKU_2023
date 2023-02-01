@@ -3752,6 +3752,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4f3defd6bac8d924aa6190ff600ef613, type: 2}
   - {fileID: 11400000, guid: c493dec5a2868cc41959ac1dd8b28d30, type: 2}
   - {fileID: 11400000, guid: ce8a7a1193a277d43a20a7e6adf21fe3, type: 2}
+  - {fileID: 11400000, guid: 8c0a55a947e3c16419cd0e1cb3803de0, type: 2}
   pressedSpace: 0
   dialogueUI: {fileID: 1471081243}
 --- !u!114 &1082434995
@@ -3789,7 +3790,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: dc0fafa504635694b8c804a00c055a42, type: 2}
   - {fileID: 11400000, guid: bd820eb956f7bc442b7b851dbd081711, type: 2}
   - {fileID: 11400000, guid: 92e4a3047f157094e945ec5123e15049, type: 2}
+  - {fileID: 11400000, guid: c5dc1fc3dd6a01b4ebe82bb0a4019cd1, type: 2}
+  currentTask: {fileID: 0}
   gameManager: {fileID: 1082434992}
+  currentTaskIndex: 0
+  taskOneComplete: 0
+  taskFourComplete: 0
 --- !u!1 &1177995263
 GameObject:
   m_ObjectHideFlags: 0

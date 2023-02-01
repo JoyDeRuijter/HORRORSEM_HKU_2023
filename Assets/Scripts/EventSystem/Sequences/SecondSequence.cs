@@ -48,8 +48,8 @@ public class SecondSequence : Sequence
         gameManager.taskManager.StartNewTask(3);
         yield return new WaitForSeconds(0.2f);
         gameManager.taskManager.ManuallyUpdateToUncompleted();
-        yield return new WaitUntil(() => gameManager.taskManager.tasks[3].isCompleted == true && gameManager.playerRoomBlock.ID == 7);
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitUntil(() => gameManager.playerRoomBlock.ID == 7);
+        yield return new WaitForSeconds(0.5f);
         gameManager.player.flashLight.enabled = true;
         gameManager.player.flashLight.TurnOnFlashLight();
         RoomEvent switchLivingroomEvent = new RoomEvent(9, 3, RoomEventType.SWITCH);
@@ -57,9 +57,10 @@ public class SecondSequence : Sequence
         DialogueEvent whereIsGrandmaDialogue = new DialogueEvent(3);
         gameManager.grandma.SetActive(false);
         whereIsGrandmaDialogue.Run();
+        yield return new WaitUntil(() => whereIsGrandmaDialogue.State == EventState.DONE);
         gameManager.taskManager.StartNewTask(4);
-        yield return new WaitForSeconds(0.2f);
         gameManager.taskManager.ManuallyUpdateToUncompleted();
+        yield return new WaitForSeconds(0.2f);
         yield return new WaitUntil(() => gameManager.playerRoomBlock.ID == 9);
         yield return new WaitForSeconds(0.2f);
         gameManager.taskManager.taskFourComplete = true;
